@@ -1,0 +1,11 @@
+#grid-container {
+    display: grid;
+    grid-template: repeat(16, 40px) / repeat(16, 40px);
+    width: 640px;
+    margin: auto;
+}
+
+.square {
+    box-sizing: border-box;
+    border: black solid 1px;
+}
