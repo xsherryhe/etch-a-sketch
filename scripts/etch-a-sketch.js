@@ -4,6 +4,17 @@ function initializeListeners() {
 }
 initializeListeners();
 
+function initializePenColorOptions() {
+    ['Black', 'Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Pink', 'Brown', 'Gray', 'Rainbow']
+    .forEach(color => {
+        const colorOption = document.createElement('option');
+        colorOption.textContent = color;
+        colorOption.value = color.toLowerCase();
+        document.querySelector('#pen-color').appendChild(colorOption);
+    })
+}
+initializePenColorOptions();
+
 function setGrid(numOfSquares) {
     const grid = document.querySelector('#grid-container'),
           gridSize = `repeat(${numOfSquares}, ${600/numOfSquares}px)`;
@@ -40,8 +51,17 @@ function changeGrid() {
 
     errorMessage.textContent = '';
     setGrid(numOfSquares);
-}
+} 
 
 function changeColor(e) {
-    e.target.style.backgroundColor = 'purple';
+    const penColor = document.querySelector('#pen-color').value;
+    e.target.style.backgroundColor = 
+        penColor == 'rainbow' ? getRandomColor() : penColor;
 }
+
+function getRandomColor() {
+    const rgb = [];
+    for(let i = 0; i < 3; i++)
+        rgb.push(Math.floor(Math.random() * 256));
+    return `rgb(${rgb.join(',')})`;
+}s

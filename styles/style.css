@@ -1,6 +1,10 @@
 #clear-grid {
     display: block;
-    margin: 15px auto;
+    margin: 0 auto 15px;
+}
+
+.setting {
+    margin: 15px 0;
 }
 
 #grid-container {
