@@ -7,7 +7,11 @@
         <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
-        <button id="reset-grid">Start New Sketch</button>
+        <label for="pen-size">Pen Size (1-100):</label>
+        <input type="number" id="pen-size" name="pen-size" min="1" max="100" value="50">
+        <button id="change-grid">Apply</button>
+        <span id="pen-size-error-message"></span>
+        <button id="clear-grid">Clear Sketchboard</button>
         <div id="grid-container">
         </div>
     </body>

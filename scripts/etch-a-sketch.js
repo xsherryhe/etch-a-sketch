@@ -1,7 +1,8 @@
-function initializeButtons() {
-    document.querySelector('#reset-grid').addEventListener('click', resetGrid);
+function initializeListeners() {
+    document.querySelector('#clear-grid').addEventListener('click', clearGrid);
+    document.querySelector('#change-grid').addEventListener('click', changeGrid);
 }
-initializeButtons();
+initializeListeners();
 
 function setGrid(numOfSquares) {
     const grid = document.querySelector('#grid-container'),
@@ -18,11 +19,27 @@ function setGrid(numOfSquares) {
     }
     grid.replaceChildren(...squares);
 }
-setGrid(16);
+setGrid(51);
 
-function resetGrid() {
+function clearGrid() {
     document.querySelectorAll('.square')
             .forEach(square => square.style.backgroundColor = 'white');
+}
+
+function changeGrid() {
+    const numOfSquares = 101 - document.querySelector('#pen-size').value,
+          errorMessage = document.querySelector('#pen-size-error-message'),
+          sameNum = numOfSquares * numOfSquares == 
+                    document.querySelector('#grid-container').children.length;
+
+    if(!numOfSquares || sameNum) return;
+    if(numOfSquares < 1 || numOfSquares > 100) {
+        errorMessage.textContent = 'Please select a pen size between 1 and 100.';
+        return;
+    }
+
+    errorMessage.textContent = '';
+    setGrid(numOfSquares);
 }
 
 function changeColor(e) {
