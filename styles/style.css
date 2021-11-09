@@ -1,7 +1,11 @@
+#reset-grid {
+    display: block;
+    margin: 15px auto;
+}
+
 #grid-container {
     display: grid;
-    grid-template: repeat(16, 40px) / repeat(16, 40px);
-    width: 640px;
+    width: 600px;
     margin: auto;
 }
 
