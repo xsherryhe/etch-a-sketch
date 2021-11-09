@@ -1,8 +1,8 @@
 function initializeListeners() {
-    document.querySelector('#clear-grid').addEventListener('click', clearGrid);
-    document.querySelector('#change-grid').addEventListener('click', changeGrid);
     document.querySelectorAll('.tool')
-            .forEach(tool => tool.addEventListener('click', changeTool));
+        .forEach(tool => tool.addEventListener('click', changeTool));
+    document.querySelector('#change-grid').addEventListener('click', changeGrid);
+    document.querySelector('#clear-grid').addEventListener('click', clearGrid);
 }
 initializeListeners();
 
@@ -52,11 +52,6 @@ function adjustPenColorSettings() {
     else penColorSettings.classList.add('hidden');
 }
 
-function clearGrid() {
-    document.querySelectorAll('.square')
-            .forEach(square => square.style.backgroundColor = 'white');
-}
-
 function changeGrid() {
     const numOfSquares = 101 - document.querySelector('#tool-size').value,
           errorMessage = document.querySelector('#tool-size-error-message'),
@@ -72,6 +67,11 @@ function changeGrid() {
     errorMessage.classList.add('hidden');
     setGrid(numOfSquares);
 } 
+
+function clearGrid() {
+    document.querySelectorAll('.square')
+        .forEach(square => square.style.backgroundColor = 'white');
+}
 
 function changeColor(e) {
     const selectedTool = document.querySelector('.selected.tool').id,
