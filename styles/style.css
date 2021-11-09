@@ -1,10 +1,19 @@
-#clear-grid {
-    display: block;
-    margin: 0 auto 15px;
+.selected {
+    color: white;
+    background-color: blue;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 .setting {
     margin: 15px 0;
+}
+
+#clear-grid {
+    display: block;
+    margin: 0 auto 15px;
 }
 
 #grid-container {
@@ -12,17 +21,4 @@
     width: 600px;
     margin: auto;
     border: black solid 2px;
-}
-
-.square {
-    box-sizing: border-box;
-}
-
-.hidden {
-    visibility: hidden;
-}
-
-.selected {
-    color: white;
-    background-color: blue;
 }
