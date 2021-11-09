@@ -17,3 +17,12 @@
 .square {
     box-sizing: border-box;
 }
+
+.hidden {
+    visibility: hidden;
+}
+
+.selected {
+    color: white;
+    background-color: blue;
+}

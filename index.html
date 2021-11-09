@@ -7,15 +7,21 @@
         <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
-        <div class="pen-size setting">
-            <label for="pen-size">Pen Size (1-100):</label>
-            <input type="number" id="pen-size" name="pen-size" min="1" max="100" value="50">
+        <div id="tool-selection">
+            <span>Tool:</span>
+            <button id="pen" class="selected tool">Pen</button>
+            <button id="pencil" class="tool">Shading Pencil</button>
+        </div>
+        <div class="tool-size setting">
+            <label for="tool-size">Tool Size (1-100):</label>
+            <input type="number" id="tool-size" name="tool-size" min="1" max="100" value="50">
             <button id="change-grid">Apply</button>
-            <span id="pen-size-error-message"></span>
+            <span id="tool-size-error-message" class="hidden">Please select a tool size between 1 and 100.</span>
         </div>
         <div class="pen-color setting">
             <label for="pen-color">Pen Color:</label>
             <select id="pen-color" name="pen-color"></select>
+        </div>
         </div>
         <button id="clear-grid">Clear Sketchboard</button>
         <div id="grid-container">
