@@ -78,6 +78,7 @@ function changeColor(e) {
           toolColor = 
             selectedTool == 'pen' ? document.querySelector('#pen-color').value
           : selectedTool == 'pencil' ? darkenBy10Percent(e.target.style.backgroundColor)
+          : selectedTool == 'eraser' ? 'white'
           : 'black';
 
     e.target.style.backgroundColor = 
