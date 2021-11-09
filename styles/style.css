@@ -7,9 +7,9 @@
     display: grid;
     width: 600px;
     margin: auto;
+    border: black solid 2px;
 }
 
 .square {
     box-sizing: border-box;
-    border: black solid 1px;
 }
