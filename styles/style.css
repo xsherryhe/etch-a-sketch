@@ -48,7 +48,7 @@ h1 {
 
 #sketchboard-top {
     display: flex;
-    width: 600px;
+    width: 604px;
     margin-bottom: 5px;
     justify-content: space-between;
     align-items: center;
@@ -63,6 +63,5 @@ h1 {
 #grid {
     display: grid;
     width: 600px;
-    margin: auto;
     border: black solid 2px;
 }
