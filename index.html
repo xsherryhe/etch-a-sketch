@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>Etch-A-Sketch</h1>
+
         <div class="grid-size setting">
             <label for="grid-size">Sketchboard Size (1-100):</label>
             <input type="number" id="grid-size" name="grid-size" min="1" max="100" value="50">
@@ -15,22 +16,31 @@
             <button id="change-grid">Apply New Size</button>
             <p id="grid-size-error-message" class="no-display">Please select a grid size between 1 and 100.</p>
         </div>
-        <div id="sketchboard-top">
-            <div class="tool-settings container">
-                <div class="tool-selection setting">
-                    <span>Tool:</span>
-                    <button id="pen" class="selected tool">Pen</button>
-                    <button id="pencil" class="tool">Shading Pencil</button>
-                    <button id="eraser" class="tool">Eraser</button>
+
+        <div class="settings-and-grid container">
+            <div class="pen-color setting">
+                <label for="pen-color">Pen Color:</label>
+                <select id="pen-color" name="pen-color"></select>
+            </div>
+
+            <div class="grid-with-top container">
+                <div id="sketchboard-top">
+                    <div class="tool-selection setting">
+                        <span>Tool:</span>
+                        <button id="pen" class="selected tool">Pen</button>
+                        <button id="pencil" class="tool">Shading Pencil</button>
+                        <button id="eraser" class="tool">Eraser</button>
+                    </div>
+
+                    <button id="clear-grid">Clear Sketchboard</button>
                 </div>
-                <div class="pen-color setting">
-                    <label for="pen-color">Pen Color:</label>
-                    <select id="pen-color" name="pen-color"></select>
+
+                <div id="grid">
                 </div>
             </div>
-            <button id="clear-grid">Clear Sketchboard</button>
-        </div>
-        <div id="grid">
+
+            <div class="right-margin">
+            </div>
         </div>
     </body>
 </html>

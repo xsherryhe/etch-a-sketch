@@ -28,10 +28,28 @@ h1 {
     margin: 5px 0;
 }
 
+.settings-and-grid {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.settings-and-grid > * {
+    flex: 1;
+}
+
+.pen-color.setting {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 5px;
+    margin-top: 1px;
+}
+
 #sketchboard-top {
     display: flex;
     width: 600px;
-    margin: 5px auto;
+    margin-bottom: 5px;
     justify-content: space-between;
     align-items: center;
 }
