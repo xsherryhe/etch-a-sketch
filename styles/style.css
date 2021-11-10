@@ -1,3 +1,7 @@
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
 .hidden {
     visibility: hidden;
 }
@@ -11,8 +15,17 @@
     background-color: blue;
 }
 
-.setting {
-    margin: 15px 0;
+.grid-size {
+    width: max-content;
+    margin: 10px auto 30px;
+}
+
+#grid-size {
+    width: 42px;
+}
+
+#grid-size-error-message {
+    margin: 5px 0;
 }
 
 #sketchboard-top {
@@ -23,15 +36,13 @@
     align-items: center;
 }
 
-#sketchboard-top > * {
-    flex-grow: 0;
+.tool-settings {
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
-#grid-size-error-message {
-    margin: 5px;
-}
-
-#grid-container {
+#grid {
     display: grid;
     width: 600px;
     margin: auto;

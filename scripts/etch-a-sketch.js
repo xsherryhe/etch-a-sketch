@@ -19,7 +19,7 @@ function initializePenColorOptions() {
 initializePenColorOptions();
 
 function setGrid(numOfSquares) {
-    const grid = document.querySelector('#grid-container'),
+    const grid = document.querySelector('#grid'),
           gridSize = `repeat(${numOfSquares}, ${600/numOfSquares}px)`;
 
     grid.style.gridTemplate = `${gridSize} / ${gridSize}`;
@@ -67,7 +67,7 @@ function changeGrid() {
     const numOfSquares = document.querySelector('#grid-size').value,
           errorMessage = document.querySelector('#grid-size-error-message'),
           sameNum = numOfSquares * numOfSquares ==
-                    document.querySelector('#grid-container').children.length;
+                    document.querySelector('#grid').children.length;
 
     if(!numOfSquares || sameNum) return;
     if(numOfSquares < 1 || numOfSquares > 100) {
