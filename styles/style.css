@@ -1,19 +1,34 @@
+.hidden {
+    visibility: hidden;
+}
+
+.no-display {
+    display: none;
+}
+
 .selected {
     color: white;
     background-color: blue;
-}
-
-.hidden {
-    visibility: hidden;
 }
 
 .setting {
     margin: 15px 0;
 }
 
-#clear-grid {
-    display: block;
-    margin: 0 auto 15px;
+#sketchboard-top {
+    display: flex;
+    width: 600px;
+    margin: 5px auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sketchboard-top > * {
+    flex-grow: 0;
+}
+
+#grid-size-error-message {
+    margin: 5px;
 }
 
 #grid-container {

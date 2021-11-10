@@ -1,8 +1,9 @@
 function initializeListeners() {
     document.querySelectorAll('.tool')
         .forEach(tool => tool.addEventListener('click', changeTool));
-    document.querySelector('#change-grid').addEventListener('click', changeGrid);
     document.querySelector('#clear-grid').addEventListener('click', clearGrid);
+    document.querySelector('#grid-size').addEventListener('input', changeMatchingGridSize);
+    document.querySelector('#change-grid').addEventListener('click', changeGrid);
 }
 initializeListeners();
 
@@ -32,7 +33,7 @@ function setGrid(numOfSquares) {
     }
     grid.replaceChildren(...squares);
 }
-setGrid(51);
+setGrid(50);
 
 function changeTool(e) {
     const selectedTool = e.target.id;
@@ -52,26 +53,31 @@ function adjustPenColorSettings() {
     else penColorSettings.classList.add('hidden');
 }
 
-function changeGrid() {
-    const numOfSquares = 101 - document.querySelector('#tool-size').value,
-          errorMessage = document.querySelector('#tool-size-error-message'),
-          sameNum = numOfSquares * numOfSquares == 
-                    document.querySelector('#grid-container').children.length;
-
-    if(!numOfSquares || sameNum) return;
-    if(numOfSquares < 1 || numOfSquares > 100) {
-        errorMessage.classList.remove('hidden');
-        return;
-    }
-
-    errorMessage.classList.add('hidden');
-    setGrid(numOfSquares);
-} 
-
 function clearGrid() {
     document.querySelectorAll('.square')
         .forEach(square => square.style.backgroundColor = 'white');
 }
+
+function changeMatchingGridSize() {
+    document.querySelector('#matching-grid-size').textContent = 
+    document.querySelector('#grid-size').value;
+}
+
+function changeGrid() {
+    const numOfSquares = document.querySelector('#grid-size').value,
+          errorMessage = document.querySelector('#grid-size-error-message'),
+          sameNum = numOfSquares * numOfSquares ==
+                    document.querySelector('#grid-container').children.length;
+
+    if(!numOfSquares || sameNum) return;
+    if(numOfSquares < 1 || numOfSquares > 100) {
+        errorMessage.classList.remove('no-display');
+        return;
+    }
+
+    errorMessage.classList.add('no-display');
+    setGrid(numOfSquares);
+} 
 
 function changeColor(e) {
     const selectedTool = document.querySelector('.selected.tool').id,
