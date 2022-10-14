@@ -1,7 +1,18 @@
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: rgb(222, 255, 222);
+}
+
+button {
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
 h1 {
     text-align: center;
     margin-bottom: 10px;
 }
+
 .hidden {
     visibility: hidden;
 }
@@ -13,6 +24,7 @@ h1 {
 .selected {
     color: white;
     background-color: blue;
+    border-radius: 4px;
 }
 
 .grid-size {
@@ -31,6 +43,7 @@ h1 {
 .settings-and-grid {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     gap: 12px;
 }
 
@@ -38,12 +51,20 @@ h1 {
     flex: 1;
 }
 
-.pen-color.setting {
+.setting {
     display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.pen-color.setting {
     justify-content: flex-end;
-    align-items: flex-start;
     gap: 5px;
     margin-top: 1px;
+}
+
+#pen-color {
+    padding: 4px;
 }
 
 #sketchboard-top {
@@ -61,6 +82,7 @@ h1 {
 }
 
 #grid {
+    background-color: white;
     display: grid;
     width: 600px;
     border: black solid 2px;
